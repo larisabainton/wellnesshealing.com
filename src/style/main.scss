@@ -1,0 +1,44 @@
+@import 'contact';
+@import 'description';
+@import 'gallery';
+@import 'footer';
+@import 'header';
+@import 'intro';
+
+body {
+   margin: 0;
+   font-family: 'Titillium Web', sans-serif;
+
+    a {
+       text-decoration: none;
+    }
+}
+
+.title {
+    font-family: 'Amaranth', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0;
+}
+
+.intro,
+.description,
+.gallery,
+.contact {
+    height: 99vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: black;
+}

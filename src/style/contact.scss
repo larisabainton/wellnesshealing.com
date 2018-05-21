@@ -1,0 +1,14 @@
+.contact {
+    background-image: url('../images/06.jpg');
+}
+
+.contact-form {
+    background-color: white;
+    color: rgb(57, 69, 75);
+
+    textarea {
+        display: flex;
+        flex: 1;
+        width: 100%;
+    }
+}
