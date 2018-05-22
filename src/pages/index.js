@@ -12,7 +12,7 @@ export default function IndexPage() {
   return (
     <div>
       <Intro title={intro.title} text={intro.text}/>
-      { descriptions.map((desc, index) => <Description title={desc.title} key={index} index={index} text={desc.text} header={desc.headerTitle} />) }
+      { descriptions.map((desc, index) => <Description title={desc.title} key={index} index={index} text={desc.text} />) }
       <Gallery title={gallery.title} text={gallery.text} images={gallery.images} />
       <Contact title={contact.title} text={contact.text} />
     </div>
