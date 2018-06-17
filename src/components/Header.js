@@ -14,7 +14,7 @@ class Header extends React.Component {
           <h1 className='header-title title'>
             <Link to="/" > {this.siteTitle} </Link>
           </h1>
-          {this.titles.map((title, index) => <a className='header-link' href={'#description-'+ index}>{title}</a>)}
+          {this.titles.map((title, index) => <a className='header-link' href={'#description-'+ index} key={index}>{title}</a>)}
           <a className='header-link' href='#gallery'>Gallery</a>
           <a className='header-link' href='#contact'>Contact</a>
       </div>
