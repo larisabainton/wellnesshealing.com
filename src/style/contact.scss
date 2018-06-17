@@ -5,10 +5,16 @@
 .contact-form {
     background-color: white;
     color: rgb(57, 69, 75);
+    padding: 20px;
+    margin: 25px;
 
     textarea {
         display: flex;
         flex: 1;
+        width: 100%;
+    }
+
+    form input {
         width: 100%;
     }
 }
