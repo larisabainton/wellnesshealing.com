@@ -4,35 +4,34 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import config from '../../config'
 import '../style/main.scss'
 
+const getUrlForLink = (name, links) => links.find(link => link.name === name).url
+
 export default function Layout({ children, data }) {
-  const { title } = data.site.siteMetadata;
-  const { description, content, name } = config;
-  const { facebookLink, twitterLink, instagramLink, linkedInLink } = config.link;
-  
+  const { title, name, description, content, descriptions, links } = data.site.siteMetadata;
+    
   return (
     <div>
       <Helmet
         title={title}
         meta={[
           { name: 'description', content: description },
-          { name: 'keywords', content: content },
+          { name: 'keywords', content },
         ]}
       />
       <Header 
         siteTitle={title}
-        titles={config.descriptions.map(desc => desc.headerTitle)}
+        titles={descriptions.map(desc => desc.headerTitle)}
       />
       <div className='body' >
         {children()}
       </div>
       <Footer 
-        facebookLink={facebookLink}
-        twitterLink={twitterLink}
-        instagramLink={instagramLink}
-        linkedInLink={linkedInLink}
+        facebookLink={getUrlForLink('facebook', links)}
+        twitterLink={getUrlForLink('twitter', links)}
+        instagramLink={getUrlForLink('instagram', links)}
+        linkedInLink={getUrlForLink('linkedIn', links)}
         name={name}
       />    
     </div>
@@ -48,6 +47,16 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        name
+        description
+        content
+        links {
+          name
+          url
+        }
+        descriptions {
+          headerTitle
+        }
       }
     }
   }
