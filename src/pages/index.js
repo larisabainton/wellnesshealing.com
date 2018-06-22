@@ -4,10 +4,14 @@ import Description from '../components/Description';
 import Contact from '../components/Contact';
 import Gallery from '../components/Gallery';
 
-import config from '../../config';
+const getSection = (name, sections) => sections.find(section => section.name === name);
 
-export default function IndexPage() {
-  const { intro, descriptions, gallery, contact } = config;
+export default function IndexPage({ data }) {
+  const { descriptions, sections } = data.site.siteMetadata;
+
+  const intro = getSection('intro', sections);
+  const gallery = getSection('gallery', sections);
+  const contact = getSection('contact', sections);
 
   return (
     <div>
@@ -18,3 +22,21 @@ export default function IndexPage() {
     </div>
   )
 }
+
+export const query2 = graphql`
+  query PageQuery {
+    site {
+      siteMetadata {
+        sections {
+          name
+          title
+          text
+        }
+        descriptions {
+          title
+          text
+        }
+      }
+    }
+  }
+`
