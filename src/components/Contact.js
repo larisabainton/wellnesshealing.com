@@ -18,7 +18,7 @@ class Contact extends React.Component {
                             <input type='text' name='name' placeholder='Name' />
                             <input type='email' name='email' placeholder='Email' />
                             <textarea name='message' placeholder='Message' rows='6' />
-                            <input type='submit' value='Send Message' />
+                            <input className='send-message' type='submit' value='Send Message' />
                         </form>
                     </div>
                 </div>
