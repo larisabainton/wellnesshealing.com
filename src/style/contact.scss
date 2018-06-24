@@ -1,20 +1,64 @@
+$base-color: rgb(229, 230, 231);
+$input-focus-color: #92c8eb;
+$message-button-color: #98c593;
+$message-button-hover-color: #6a8966;
+$message-button-active-color: #2d3b2c;
+
 .contact {
     background-image: url('../images/06.jpg');
 }
 
+.contact .content {
+    width: 75%;
+}
+
 .contact-form {
     background-color: white;
-    color: rgb(57, 69, 75);
-    padding: 20px;
     margin: 25px;
+    color: $base-color;
+    padding: 2em;
 
-    textarea {
+    form {
         display: flex;
-        flex: 1;
-        width: 100%;
+        flex-direction: column;
     }
 
-    form input {
-        width: 100%;
+    input,
+    textarea {
+        width: inherit;
+        font-size: 1em;
+        text-align: left;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        border: 2px $base-color solid;
+
+        &:focus {
+            outline: none;
+            border-color: $input-focus-color;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .send-message {
+        background-color: $message-button-color;
+        color: white;
+        width: 200px;
+        border-radius: 25px;
+        height: 50px;
+        text-align: center;
+        border: none;
+        align-self: center;
+
+        &:hover {
+            background-color: $message-button-hover-color;
+        }
+
+        &:active {
+            background-color: $message-button-active-color;
+        }
     }
 }
