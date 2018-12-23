@@ -2,21 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+    faTwitter,
+    faFacebookF,
+    faLinkedinIn,
+    faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../style/main.scss';
 
-const getUrlForLink = (name, links) => links.find(link => link.name === name).url;
+library.add(faTwitter, faFacebookF, faLinkedinIn, faInstagram, faCopyright);
+
+const getSection = (name, sections) => sections.find(section => section.name === name);
+
+const getUrlForLink = (name, links) => {
+    const matchingLink = links.find(link => link.name === name);
+    return matchingLink && matchingLink.url;
+};
 
 export default function Layout({ children, data }) {
     const {
-        title, name, description, content, descriptions, links,
+        title, name, description, content, descriptions, links, sections,
     } = data.site.siteMetadata;
 
     return (
         <div>
             <Helmet
-                title={title}
+                title={name}
                 meta={[
                     { name: 'description', content: description },
                     { name: 'keywords', content },
@@ -25,6 +40,8 @@ export default function Layout({ children, data }) {
             <Header
                 siteTitle={title}
                 titles={descriptions.map(desc => desc.headerTitle)}
+                galleryTitle={getSection('gallery', sections).headerTitle}
+                contactTitle={getSection('contact', sections).headerTitle}
             />
             <div className="body">
                 {children()}
@@ -69,6 +86,10 @@ export const query = graphql`
         name
         description
         content
+        sections {
+            name
+            headerTitle
+        }
         links {
           name
           url

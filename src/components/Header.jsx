@@ -2,15 +2,20 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 class Header extends React.Component {
-    constructor({ siteTitle, titles }) {
+    constructor({
+        siteTitle, titles, galleryTitle, contactTitle,
+    }) {
         super();
         this.siteTitle = siteTitle;
         this.titles = titles;
+        this.galleryTitle = galleryTitle;
+        this.contactTitle = contactTitle;
     }
 
     render() {
         return (
             <div className="header">
+                <div className="image" />
                 <h1 className="header-title title">
                     <Link to="/">
                         {' '}
@@ -24,10 +29,10 @@ class Header extends React.Component {
                     </a>
                 ))}
                 <a className="header-link" href="#gallery">
-                    {'Gallery'}
+                    {this.galleryTitle}
                 </a>
                 <a className="header-link" href="#contact">
-                    {'Contact'}
+                    {this.contactTitle}
                 </a>
             </div>
         );

@@ -26,7 +26,11 @@ export default function IndexPage({ data }) {
                 />
             ))
             }
-            <Gallery title={gallery.title} text={gallery.text} images={gallery.images} />
+            <Gallery
+                title={gallery.title}
+                text={gallery.text}
+                videos={gallery.videos}
+            />
             <Contact title={contact.title} text={contact.text} />
         </div>
     );
@@ -60,6 +64,7 @@ export const query2 = graphql`
           name
           title
           text
+          videos
         }
         descriptions {
           title

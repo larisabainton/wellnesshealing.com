@@ -12,8 +12,12 @@ module.exports = {
         ],
         sections: [
             { name: 'intro', title: 'Hey', text: 'Hey this is the intro' },
-            { name: 'gallery', title: 'Gallery', text: 'Here is some text about what I do' },
-            { name: 'contact', title: 'Say Hello.', text: 'Keep in touch' },
+            {
+                name: 'gallery', headerTitle: 'Gallery', title: 'Gallery', text: 'Here is some text about what I do', videos: '',
+            },
+            {
+                name: 'contact', headerTitle: 'Contact', title: 'Say Hello.', text: 'Keep in touch',
+            },
         ],
         descriptions: [
             { headerTitle: 'About Me', title: 'Section 1 Title', text: 'This is the text for section 1' },
