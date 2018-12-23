@@ -11,7 +11,9 @@ class Description extends React.Component {
     render() {
         return (
             <div id={`description-${this.index}`} className="description">
-                <div className="content">
+                <div className="image" />
+                <div className="content-image" />
+                <div className="content-text">
                     <h1 className="description-title title">
                         {this.title}
                     </h1>

@@ -10,6 +10,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className="contact" id="contact">
+                <div className="image" />
                 <div className="content">
                     <h1 className="contact-title title">
                         {this.title}
@@ -20,7 +21,7 @@ class Contact extends React.Component {
                     <div className="contact-form">
                         <form method="post">
                             <input type="text" name="name" placeholder="Name" />
-                            <input type="email" name="email" placeholder="Email" />
+                            <input type="text" name="email" placeholder="Email" />
                             <textarea name="message" placeholder="Message" rows="6" />
                             <input className="send-message" type="submit" value="Send Message" />
                         </form>

@@ -10,6 +10,7 @@ class Intro extends React.Component {
     render() {
         return (
             <div className="intro" id="intro">
+                <div className="image" />
                 <div className="content">
                     <h1 className="intro-title title">
                         {this.title}
