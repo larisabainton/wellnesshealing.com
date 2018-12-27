@@ -3,12 +3,11 @@ import Link from 'gatsby-link';
 
 class Header extends React.Component {
     constructor({
-        siteTitle, titles, galleryTitle, contactTitle,
+        siteTitle, titles, contactTitle,
     }) {
         super();
         this.siteTitle = siteTitle;
         this.titles = titles;
-        this.galleryTitle = galleryTitle;
         this.contactTitle = contactTitle;
     }
 
@@ -28,9 +27,6 @@ class Header extends React.Component {
                         {title}
                     </a>
                 ))}
-                <a className="header-link" href="#gallery">
-                    {this.galleryTitle}
-                </a>
                 <a className="header-link" href="#contact">
                     {this.contactTitle}
                 </a>

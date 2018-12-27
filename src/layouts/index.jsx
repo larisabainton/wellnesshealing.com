@@ -40,7 +40,6 @@ export default function Layout({ children, data }) {
             <Header
                 siteTitle={title}
                 titles={descriptions.map(desc => desc.headerTitle)}
-                galleryTitle={getSection('gallery', sections).headerTitle}
                 contactTitle={getSection('contact', sections).headerTitle}
             />
             <div className="body">

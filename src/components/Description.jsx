@@ -1,3 +1,4 @@
+import Parser from 'html-react-parser';
 import React from 'react';
 
 class Description extends React.Component {
@@ -18,7 +19,7 @@ class Description extends React.Component {
                         {this.title}
                     </h1>
                     <div className="description-text">
-                        {this.text}
+                        {Parser(this.text)}
                     </div>
                 </div>
             </div>

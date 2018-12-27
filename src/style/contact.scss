@@ -1,11 +1,19 @@
 $base-color: rgb(229, 230, 231);
-$input-focus-color: #92c8eb;
-$message-button-color: #98c593;
-$message-button-hover-color: #6a8966;
-$message-button-active-color: #2d3b2c;
+$input-focus-color: #d90035;
+$message-button-color: #754d24;
+$message-button-hover-color: #44280c;
+$message-button-active-color: #a77039;
 
 .contact {
-    background-image: url('../images/06.jpg');
+    background-image: url('../images/01.jpg');
+    color: white;
+}
+
+.contact .content-text {
+    @include center-content;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 100%;
 }
 
 .contact .content {

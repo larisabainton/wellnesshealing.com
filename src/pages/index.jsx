@@ -3,7 +3,6 @@ import React from 'react';
 import Intro from '../components/Intro';
 import Description from '../components/Description';
 import Contact from '../components/Contact';
-import Gallery from '../components/Gallery';
 
 const getSection = (name, sections) => sections.find(section => section.name === name);
 
@@ -11,7 +10,6 @@ export default function IndexPage({ data }) {
     const { descriptions, sections } = data.site.siteMetadata;
 
     const intro = getSection('intro', sections);
-    const gallery = getSection('gallery', sections);
     const contact = getSection('contact', sections);
 
     return (
@@ -26,11 +24,6 @@ export default function IndexPage({ data }) {
                 />
             ))
             }
-            <Gallery
-                title={gallery.title}
-                text={gallery.text}
-                videos={gallery.videos}
-            />
             <Contact title={contact.title} text={contact.text} />
         </div>
     );
@@ -64,7 +57,6 @@ export const query2 = graphql`
           name
           title
           text
-          videos
         }
         descriptions {
           title
