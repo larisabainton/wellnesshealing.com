@@ -4,8 +4,6 @@ module.exports = {
         description: 'Valerie Bainton, Physical Therapy',
         content: 'Valerie Bainton, Physical Therapy',
         name: 'Valerie Bainton',
-        links: [
-        ],
         sections: [
             /* name, headerTitle, title, text */
             {

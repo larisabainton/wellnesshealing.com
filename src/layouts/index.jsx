@@ -18,14 +18,10 @@ library.add(faTwitter, faFacebookF, faLinkedinIn, faInstagram, faCopyright);
 
 const getSection = (name, sections) => sections.find(section => section.name === name);
 
-const getUrlForLink = (name, links) => {
-    const matchingLink = links.find(link => link.name === name);
-    return matchingLink && matchingLink.url;
-};
 
 export default function Layout({ children, data }) {
     const {
-        title, name, description, content, descriptions, links, sections,
+        title, name, description, content, descriptions, sections,
     } = data.site.siteMetadata;
 
     return (
@@ -46,10 +42,6 @@ export default function Layout({ children, data }) {
                 {children()}
             </div>
             <Footer
-                facebookLink={getUrlForLink('facebook', links)}
-                twitterLink={getUrlForLink('twitter', links)}
-                instagramLink={getUrlForLink('instagram', links)}
-                linkedInLink={getUrlForLink('linkedIn', links)}
                 name={name}
             />
         </div>
@@ -88,10 +80,6 @@ export const query = graphql`
         sections {
             name
             headerTitle
-        }
-        links {
-          name
-          url
         }
         descriptions {
           headerTitle
